@@ -5,6 +5,8 @@
 
 // I AM NOT DONE
 
+use std::ops::Add;
+
 // Step 1.
 // Complete the `capitalize_first` function.
 // "hello" -> "Hello"
@@ -12,7 +14,7 @@ pub fn capitalize_first(input: &str) -> String {
     let mut c = input.chars();
     match c.next() {
         None => String::new(),
-        Some(first) => ???,
+        Some(first)
     }
 }
 
@@ -21,7 +23,11 @@ pub fn capitalize_first(input: &str) -> String {
 // Return a vector of strings.
 // ["hello", "world"] -> ["Hello", "World"]
 pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    vec![]
+    let mut w = words.iter();
+    match w.next() {
+        None => vec![],
+        Some(vec) => vec![capitalize_first(*vec)],
+    }
 }
 
 // Step 3.
